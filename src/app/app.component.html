@@ -1,0 +1,120 @@
+
+<br/><br/>
+<!-- Create Form -->
+<app-header></app-header>
+<form #basicForm="ngForm" (ngSubmit)="getData(basicForm.value)">
+    <input type="text" ngModel name="user" placeholder="Enter user name"/>
+    <br/><br/>
+    <input type="text" ngModel name="email" placeholder="Enter user email"/>
+    <br/><br/>
+    <input type="text" ngModel name="password" placeholder="Enter user password"/>
+    <br/><br/>
+    <button>submit</button>
+
+</form>
+<ul>
+    <li>{{userData.user}}</li>
+    <li>{{userData.email}}</li>
+    <li>{{userData.password}}</li>
+</ul>
+
+<!-- toggle button -->
+<h1>{{tag}}</h1>
+<p *ngIf="display">
+    heading tag
+</p>
+<button (click)="toggle()">Toggle</button>
+
+<p>
+	<ngb-alert [dismissible]="false">
+         <strong>Warning!</strong> Better check yourself, you're not looking too good.
+         </ngb-alert>
+</p>
+
+<!-- material UI -->
+<mat-slide-toggle>Toggle me!</mat-slide-toggle>
+
+<h1> To create an angular application and working with its components.</h1>
+<app-login></app-login>
+<button (click)="function('vinay','kumar')">click</button>
+<br /> <br />
+<input type="text" #box (keyup)="fun(box.value)" placeholder="event keyup" />
+<br /><br />
+<input type="text" #box1 (keydown)="fun(box1.value)" placeholder="event keydown" />
+<br /><br />
+<input type="text" #box2 (blur)="fun(box2.value)" placeholder="event blur" />
+<input type="text" #box3 (input)="fun(box3.value)" placeholder="event input" />
+
+<br /><br /><br />
+<input type="text" #box4 placeholder="Enter Name" name="name" />
+<button (click)="getValue(box4.value)">click</button>
+<p>
+    Box Value is : {{displayVal}}
+</p>
+<br /><br />
+<h1>{{data}}</h1>
+<button (click)="counter('minus')">--</button>
+<p>Count : {{count}}</p>
+<button (click)="counter('Add')">++</button>
+
+<br /><br />
+<h1>{{data1}}</h1>
+<!-- using interpolation -->
+<input type="text" name="user-nme" value="{{name}}" disabled={{disable}} />
+<br /><br />
+<!-- using property binding -->
+<input type="text" name="user-nme" [value]="name" [disabled]="disable" />
+
+<h1>{{data2}}</h1>
+<p *ngIf="show else elseBlock">code step by step</p>
+<ng-template #elseBlock>
+    <p>Else Condition</p>
+</ng-template>
+
+<!-- Multiple condition or If else using property binding -->
+<h1>{{data3}}</h1>
+<ng-template [ngIf]="color==='red'">
+    <p style="color:'red'">Red color</p>
+</ng-template>
+
+<ng-template [ngIf]="color==='green'">
+    <p style="color:'green'">Green color</p>
+</ng-template>
+
+<ng-template [ngIf]="color==='blue'">
+    <p style="color:'blue'">Blue color</p>
+</ng-template>
+
+<!-- switch case -->
+<h1>{{data4}}</h1>
+<div [ngSwitch]="color1">
+    <p style="color: red;" *ngSwitchCase="'red'">Red color</p>
+    <p style="color: green;" *ngSwitchCase="'green'">green color</p>
+    <p *ngSwitchDefault>not match any color</p>
+</div>
+
+<!-- For Loop -->
+<h1>{{data5}}</h1>
+<p *ngFor="let item of user">Name is: {{item}}</p>
+<p *ngFor="let item of userDetails">{{item.email}} -- {{item.name}} -- {{item.phone}}</p>
+
+<!-- Nasted Loop -->
+<h1>{{data6}}</h1>
+<ul *ngFor="let user of users">
+    <li>Name : {{user.name}}</li>
+    <li>Phone : {{user.phone}}</li>
+    <li>Social Account :</li>
+    <ul *ngFor="let account of user.socialAccount">
+        <li>{{account}}</li>
+    </ul>
+</ul>
+
+<!-- Style Binding :- apply for dynamic binding -->
+<h1 [style.color]="color2" [style.backgroundColor]="bgcolor">{{data7}}</h1>
+<button (click)="updateColor()">Update Color</button>
+
+<!-- Header components -->
+<!-- <app-header></app-header> -->
+<!-- <h1>{{data8}}</h1> -->
+
+
