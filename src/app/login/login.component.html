@@ -3,10 +3,15 @@
 <app-child [item]="data"></app-child>
 <button (click)="updateChild()">Update child component</button>
 
-<h1>Reusable Component</h1>
+<h1>Reusable Component</h1> 
 <ul *ngFor="let user of userDetails">
    <app-child [item1]="user"></app-child>
 </ul>
+
+<h1>Send data child to parent component</h1>
+<br/><br/>
+<h1>{{data1}}</h1>
+<app-child (updateDataEvent)="updateData($event)"></app-child>
 
 
 

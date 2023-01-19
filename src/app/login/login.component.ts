@@ -40,5 +40,10 @@ export class LoginComponent implements OnInit {
     {name:"sidhu", email : "anil2@gmail.com" },
     {name:"anil", email : "anil3@gmail.com" }
   ]
+  data1="x"
+  updateData(item:string){
+    console.log(item)
+    this.data1=item;
+  }
 
 }
