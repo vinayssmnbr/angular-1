@@ -4,10 +4,12 @@ import { AppComponent } from './app.component';
 import { UserListComponent } from './user-list/user-list.component';
 import { LoginComponent } from './login/login.component';
 import { HeaderComponent } from './header/header.component';
-import { FormsModule } from '@angular/forms';
 import { ChildComponent } from './child/child.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './home/home.component';
+import { FormsModule} from '@angular/forms';
+import { ReactiveFormsModule} from '@angular/forms';
+import { RedElDirective } from './red-el.directive';
 
 
 @NgModule({
@@ -17,14 +19,21 @@ import { HomeComponent } from './home/home.component';
     HeaderComponent,
     LoginComponent,
     ChildComponent,
-    HomeComponent
+    HomeComponent,
+    RedElDirective,
+   
   ],
   imports: [
     BrowserModule,
+    AppRoutingModule,
     FormsModule,
-    AppRoutingModule
-    // NgbModule
-   
+    ReactiveFormsModule
+
+    
+    
+  
+  // NgModule   
+
   ],
   providers: [],
   bootstrap: [AppComponent],

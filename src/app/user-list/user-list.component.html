@@ -1,1 +1,29 @@
+<!-- <h1>{{title}}</h1>
+<input type="text" [(ngModel)]="name">
+<h3>{{name}}</h3> -->
+<h1>{{title1}}</h1>
+<form #loginForm="ngForm" (ngSubmit)=userLogin(loginForm.value)>
+    <input type="text" placeholder="Enter Name" name="name" ngModel required>
+    <br /><br />
+    <input type="password" placeholder="Enter Password" name="password" ngModel>
+    <br /><br />
+    <button>Login</button>
+</form>
+
+<h1>{{title2}}</h1>
+<form  [formGroup]="loginForm1" (ngSubmit)="loginuser()">
+    <input type="text" placeholder="Enter Name" name="user" formControlName="user">
+    <br />
+    <span *ngIf="uservalidators  && uservalidators.invalid && uservalidators.touched" style="color:red">this field is required</span>
+    <br />
+    <input type="password" placeholder="Enter Password" name="password" formControlName="password">
+    <br />
+    <span *ngIf="passwordValidators && passwordValidators.invalid && passwordValidators.touched" style="color:red">This field is required</span>
+    <br />
+    <button [disabled]="loginForm1.invalid">Login</button>
+</form>
+
+<!-- Directive -->
+<h1>{{title3}}</h1>
+<p appRedEl>{{title3}}</p>
 
