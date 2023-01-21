@@ -10,7 +10,11 @@ import { HomeComponent } from './home/home.component';
 import { FormsModule} from '@angular/forms';
 import { ReactiveFormsModule} from '@angular/forms';
 import { RedElDirective } from './red-el.directive';
-
+import { NoPageComponent } from './no-page/no-page.component';
+import { AboutCompanyComponent } from './about-company/about-company.component';
+import { AboutMeComponent } from './about-me/about-me.component';
+import { FooterComponent } from './footer/footer.component';
+import { HttpClientModule} from '@angular/common/http'
 
 @NgModule({
   declarations: [
@@ -21,13 +25,18 @@ import { RedElDirective } from './red-el.directive';
     ChildComponent,
     HomeComponent,
     RedElDirective,
+    NoPageComponent,
+    AboutCompanyComponent,
+    AboutMeComponent,
+    FooterComponent,
    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
 
     
     

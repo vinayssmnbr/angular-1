@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators} from '@angular/forms'
+import { FormGroup, FormControl, Validators} from '@angular/forms';
+// import { UserdataService} from './services/users-data.service'
 @Component({ 
   selector: 'app-user-list',
   templateUrl: './user-list.component.html',
@@ -11,6 +12,8 @@ export class UserListComponent implements OnInit {
   constructor() { 
     this.name="to way binding"
   }
+  
+  
 
   ngOnInit(): void {
 
@@ -38,6 +41,8 @@ export class UserListComponent implements OnInit {
     return this.loginForm1.get('password')
   }
 title3="Directive"
+
+
 
 
 }

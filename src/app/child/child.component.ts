@@ -13,6 +13,14 @@ export class ChildComponent implements OnInit {
   @Output() updateDataEvent= new EventEmitter<string>();
   ngOnInit(): void {
   }
+  memberData=[
+    {name:"Vinay",email:"vinay@gmail.com"},
+    {name:"Rohit",email:"rohit@gmail.com"},
+    {name:"Deepak",email:"deepak@gmail.com"},
+    {name:"Nikhi",email:"nikhil@gmail.com"}
+
+  ]
+ 
 
 
 }

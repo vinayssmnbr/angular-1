@@ -1,8 +1,19 @@
 <!-- <h1>{{item}}</h1>
 <h1>its work</h1> -->
-<li>{{item1.name}}</li>
+<!-- <li>{{item1.name}}</li>
 <li>{{item1.email}}</li>
 
 <input type="text" #box />
-<button (click)="updateDataEvent.emit(box.value)">Update Data</button>
+<button (click)="updateDataEvent.emit(box.value)">Update Data</button> -->
+<h1>My all detail in this page</h1>
+<a routerLink="company">About Company</a>
+<br/>
+<a routerLink="me">About Me</a>
+<router-outlet></router-outlet>
+<ul>
+    <li *ngFor="let data of memberData">
+        {{data.name}}
+    </li>
+</ul>
+<app-footer></app-footer>
 
