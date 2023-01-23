@@ -5,7 +5,8 @@ import { HttpClient} from '@angular/common/http';
   providedIn: 'root'
 })
 export class UserdataService {
-  apiurl="https://api.github.com/users"
+  apiurl="http://localhost:8000/users"
+  // apiurl1=" http://localhost:8000/users"
  
   constructor(private http:HttpClient) { }
   userapi(){
@@ -18,5 +19,8 @@ export class UserdataService {
       {name:'ram',age:38,email:'ram@gmail.com'},
       {name:'shyam',age:30,email:'shyam@gmail.com'}
     ]
+  }
+  saveUsers(data:any){
+    return this.http.post(this.apiurl,data)
   }
 }

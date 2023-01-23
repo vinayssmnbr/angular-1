@@ -14,10 +14,5 @@ export class AppComponent {
     console.log("userdata",userdata.users)
     this.users= userdata.users();
 
-    this.userdata.userapi().subscribe((data)=>{
-      console.log("data",data);
-      this.users=data
-    })
-
   }
 }

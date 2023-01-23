@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators} from '@angular/forms';
-// import { UserdataService} from './services/users-data.service'
+import { response } from 'express';
+import { UserdataService } from '../services/userdata.service'
 @Component({ 
   selector: 'app-user-list',
   templateUrl: './user-list.component.html',
@@ -8,11 +9,19 @@ import { FormGroup, FormControl, Validators} from '@angular/forms';
 })
 export class UserListComponent implements OnInit {
   name: string;
-
-  constructor() { 
+users:any
+  constructor(private userdata:UserdataService) { 
+    this.userdata.userapi().subscribe((data)=>{
+      console.log("data",data);
+      this.users=data
+    })
     this.name="to way binding"
   }
-  
+  getuserFormdata(data:any){
+    this.userdata.saveUsers(data).subscribe((response)=>{
+      console.log(response)
+    })
+  }
   
 
   ngOnInit(): void {
