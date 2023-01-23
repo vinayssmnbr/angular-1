@@ -2,6 +2,7 @@ import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AboutCompanyComponent } from './about-company/about-company.component';
 import { AboutMeComponent } from './about-me/about-me.component';
+import { AdminLoginComponent } from './admin/admin-login/admin-login.component';
 import { ChildComponent } from './child/child.component';
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
@@ -51,7 +52,11 @@ const routes: Routes = [
   path:'**',
   component:NoPageComponent
  
-}
+},
+// {
+// path:"admin", loadChildren:()=>import('./admin/admin.module')
+// .then(mod=>mod.AdminModule)
+// }
 ];
 
 @NgModule({

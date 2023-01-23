@@ -15,6 +15,9 @@ import { AboutCompanyComponent } from './about-company/about-company.component';
 import { AboutMeComponent } from './about-me/about-me.component';
 import { FooterComponent } from './footer/footer.component';
 import { HttpClientModule} from '@angular/common/http'
+import { AdminRoutingModule } from './admin/admin-routing.module';
+import { AdminLoginComponent } from './admin/admin-login/admin-login.component';
+// import { AdminModule} from './admin/admin.module'
 
 @NgModule({
   declarations: [
@@ -30,13 +33,18 @@ import { HttpClientModule} from '@angular/common/http'
     AboutMeComponent,
     FooterComponent,
    
+   
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    AdminRoutingModule,
+    
+    
+    // AdminModule 
 
     
     
